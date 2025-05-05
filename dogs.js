@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const breedButtonsContainer = document.getElementById('breed-buttons');
   const breedInfoContainer = document.getElementById('breed-info');
 
-  // Load 10 random dog images for carousel
   fetch('https://dog.ceo/api/breeds/image/random/10')
     .then(res => res.json())
     .then(data => {
@@ -11,7 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
         carouselContainer.innerHTML = data.message.map(img =>
           `<img src="${img}" class="slide" alt="Dog image"/>`
         ).join('');
-        // Initialize Simple-Slider
+  
+
         new SimpleSlider('.carousel', {
           autoPlay: true,
           delay: 3000
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
       console.error('Failed to load dog images:', err);
     });
 
-  // Load all dog breeds
+
   fetch('https://dog.ceo/api/breeds/list/all')
     .then(res => res.json())
     .then(data => {
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     .catch(err => console.error('Failed to load breed list:', err));
 
-  // Load breed info when button clicked or voice command used
+ 
   async function loadBreedInfo(breed) {
     breedInfoContainer.innerHTML = 'Loading info...';
     breedInfoContainer.classList.remove('hidden');
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // === Voice Commands ===
+
   if (window.annyang) {
     const commands = {
       'load dog breed *breed': (breed) => {
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// Audio setup for home page
+
 const turnOnBtn = document.querySelector('.audio-controls button:nth-child(3)');
 const turnOffBtn = document.querySelector('.audio-controls button:nth-child(4)');
 

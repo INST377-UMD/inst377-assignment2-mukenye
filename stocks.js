@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
     const POLYGON_API_KEY = 's8RZJwIKzxzZCTHBITwTbMBxNnp1kd_3';
   
-    let chart; // We'll store the chart here so we can update it later
+    let chart; 
   
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
