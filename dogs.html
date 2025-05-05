@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dogs</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="stocks.html">Stocks</a></li>
+      <li><a href="dogs.html">Dogs</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1>Dog Gallery</h1>
+    <div id="dog-carousel" class="carousel"></div>
+    
+    <h2>Dog Breeds</h2>
+    <div id="breed-buttons"></div>
+    <div id="breed-info" class="hidden"></div>
+  </main>
+
+  <div class="audio-controls">
+    <h3>Audio Commands:</h3>
+    <ul>
+      <li>Say "Load Dog Breed [breed name]"</li>
+      <li>Say "Change the color to [color]"</li>
+      <li>Say "Navigate to [page]"</li>
+    </ul>
+    <button onclick="annyang.start()">Turn On Audio</button>
+    <button onclick="annyang.abort()">Turn Off Audio</button>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/simple-slider"></script>
+  <script src="dogs.js"></script>
+</body>
+</html>
