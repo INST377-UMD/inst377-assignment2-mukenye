@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stocks</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="stocks.html">Stocks</a></li>
+      <li><a href="dogs.html">Dogs</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1>Stock Lookup</h1>
+    <form id="stock-form">
+      <input type="text" id="stock-symbol" placeholder="Enter ticker (e.g., AAPL)" required />
+      <select id="date-range">
+        <option value="30">30 Days</option>
+        <option value="60">60 Days</option>
+        <option value="90">90 Days</option>
+      </select>
+      <button type="submit">Get Stock Data</button>
+    </form>
+
+    <canvas id="stock-chart"></canvas>
+
+    <h2>Top Reddit Stocks</h2>
+    <table id="reddit-table">
+      <thead>
+        <tr>
+          <th>Ticker</th>
+          <th>Comments</th>
+          <th>Sentiment</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </main>
+
+  <div class="audio-controls">
+    <h3>Audio Commands:</h3>
+    <ul>
+      <li>Say "Lookup [stock]"</li>
+      <li>Say "Change the color to [color]"</li>
+      <li>Say "Navigate to [page]"</li>
+    </ul>
+    <button onclick="annyang.start()">Turn On Audio</button>
+    <button onclick="annyang.abort()">Turn Off Audio</button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
+  <script src="stocks.js"></script>
+</body>
+</html>
